@@ -14,6 +14,7 @@ B="${PHOREPOC_BUILD:?}"
 KEYS=$(sed -n 's/^COMPONENTS_x32="\(.*\)"/\1/p' "$REPO/package.conf")
 SKIP=$(sed -n 's/^SKIP_DATA_x32="\(.*\)"$/\1/p' "$REPO/package.conf")
 FILES=()
+CENREP=""
 for z in "$B"/qt48/*-zdata.txt; do
   [ -f "$z" ] || continue
   while IFS= read -r line; do
@@ -21,10 +22,10 @@ for z in "$B"/qt48/*-zdata.txt; do
     target=${line%%=*}; host=${line#*=}
     case "$target" in sys\\install\\*) continue ;; esac
     case " $SKIP " in *" $target "*) continue ;; esac
-    # SWI writes only a package's own \private\<SID>\ folders (and other processes' import folders): the CenRep files ride in the
-    # package's own folder (shell/orbit.txt: cenrep=) and pheshellsel copies them to \private\10202be9\ at activation
+    # SWI writes only a package's own \private\<SID>\ folders: the CenRep files (\private\10202be9\) go in an embedded TYPE=SP
+    # package of Central Repository, as the 2010 packages do (the image carries its ROM stub, CenRepStub.sis)
     case "$target" in
-      private\\10202be9\\*) target="resource\\phe\\shells\\orbit\\cenrep\\${target##*\\}" ;;
+      private\\10202be9\\*) CENREP="$CENREP,$host=c:/private/10202be9/${target##*\\}"; continue ;;
       private\\200267af\\*) continue ;;
     esac
     FILES+=(--file "$host=!:/${target//\\//}")
@@ -38,4 +39,4 @@ mkdir -p "$B/sis"
 # 0x2001E61C = the "Qt" package's identity (qt-symbian); Orbit's own is in Phorepoc's test range
 PHOREPOC_S4=1 PHOREPOC_QT48=1 python3 "$PHOREPOC_PDK/tools/make_sis.py" $KEYS --unsigned --uid 0xE7015A10 \
   --version "${PHOREPOC_PACKAGE_VERSION:-1.0.0}" --name "Orbit" --vendor Phorepoc \
-  --depends 0x2001E61C,4.8.0,Qt "${FILES[@]}" --out "$B/sis/orbit-ui-x32.sis"
+  --depends 0x2001E61C,4.8.0,Qt ${CENREP:+--embed "0x10202BE9,sp,1.0.0,Orbit settings$CENREP"} "${FILES[@]}" --out "$B/sis/orbit-ui-x32.sis"
