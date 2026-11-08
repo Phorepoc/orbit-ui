@@ -1,3 +1,5 @@
+# (servers other processes connect to are started with "wait", as a client's own StartServer does: two camenuserver instances
+# racing over the same SQL database made its first start fail with "database table is locked")
 # What pheshellsel starts before Orbit's launcher (the format of core's s4start.txt). "wait <exe>" = start and wait for its
 # rendezvous; "waitdir" = wait until a folder exists; a plain exe = fire and forget. Bare names are found in \sys\bin of
 # every drive, so the package may sit on any of them.
@@ -7,7 +9,7 @@ wait hbthemeserver.exe
 wait hbdevicedialogappserver.exe
 qsfwdatabasemanagerserver.exe
 qpspathmapperserver.exe
-camenuserver.exe
-scrserver.exe
+wait scrserver.exe
+wait camenuserver.exe
 softwaretransactionservices.exe
 stsserver.exe
