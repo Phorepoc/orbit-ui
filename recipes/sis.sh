@@ -21,6 +21,12 @@ for z in "$B"/qt48/*-zdata.txt; do
     target=${line%%=*}; host=${line#*=}
     case "$target" in sys\\install\\*) continue ;; esac
     case " $SKIP " in *" $target "*) continue ;; esac
+    # SWI writes only a package's own \private\<SID>\ folders (and other processes' import folders): the CenRep files ride in the
+    # package's own folder (shell/orbit.txt: cenrep=) and pheshellsel copies them to \private\10202be9\ at activation
+    case "$target" in
+      private\\10202be9\\*) target="resource\\phe\\shells\\orbit\\cenrep\\${target##*\\}" ;;
+      private\\200267af\\*) continue ;;
+    esac
     FILES+=(--file "$host=!:/${target//\\//}")
   done < "$z"
 done

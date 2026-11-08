@@ -22,12 +22,12 @@ Check out core, the [pdk](https://github.com/Phorepoc/pdk), qt-symbian and this 
 `phe source export -a`, then in the toolchain's web image with `PHOREPOC_S4=1 PHOREPOC_QT48=1`:
 
 ```sh
-bash recipes/prebuild.sh                       # Qt host tools, Orbit's configure, the Z: data lists
+bash recipes/prebuild.sh                       # Qt 4.8 (if not built), Orbit's configure, the exports, host tools, the Z: data lists
 phe component build -arch x32 $(sed -n 's/^COMPONENTS_x32="\(.*\)"/\1/p' package.conf)
 bash recipes/sis.sh                            # $PHOREPOC_BUILD/sis/orbit-ui-x32.sis
 ```
 
-`recipes/prebuild.sh` needs core's `os/tools/phorepoc-s4/` (the S^4 configure scripts), which is not in core yet.
+`recipes/prebuild.sh` runs core's `os/tools/phorepoc-s4/` (the S^4 configure scripts, ported from the private tree, not yet run end to end in CI) after Qt 4.8 is built.
 
 ## License
 

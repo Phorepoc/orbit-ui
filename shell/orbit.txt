@@ -4,3 +4,4 @@ id=orbit
 name=Orbit
 start=!:\resource\phe\shells\orbit.start
 launcher=!:\sys\bin\hsapplicationlauncher.exe
+cenrep=!:\resource\phe\shells\orbit\cenrep
