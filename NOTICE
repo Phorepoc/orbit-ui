@@ -1,0 +1,15 @@
+orbit-ui: Orbit, the UI of Symbian^4, as a Catalogue package for Phorepoc OS
+Copyright The Phorepoc Authors (see AUTHORS)
+
+Phorepoc was founded by Kyriakos Bompotis.
+
+Our files (recipes, package.conf, the shell description, workflows) are licensed under the BSD 2-Clause License (LICENSE).
+
+The Symbian Foundation's sources are not copied here, nor in core: the build fetches them at the commits pinned in the Phorepoc
+baseline lock. They are copyright Nokia Corporation and/or its subsidiaries and licensed as SOURCE-OFFER.txt lists: Hb under
+the GNU Lesser General Public License 2.1 with the Nokia Qt LGPL Exception 1.1, the rest under the Eclipse Public License 1.0.
+
+The package is installed through the Catalogue; no Phorepoc image carries it. It installs these licences and the source offer in
+\resource\phe\orbit\licences\.
+
+Qt is a registered trademark of The Qt Company Ltd and is used here only to name the software.

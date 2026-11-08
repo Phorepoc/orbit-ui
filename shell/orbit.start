@@ -1,0 +1,13 @@
+# What pheshellsel starts before Orbit's launcher (the format of core's s4start.txt). "wait <exe>" = start and wait for its
+# rendezvous; "waitdir" = wait until a folder exists; a plain exe = fire and forget. Bare names are found in \sys\bin of
+# every drive, so the package may sit on any of them.
+rightsserver.exe
+waitdir c:\system\temp\ 3000
+wait hbthemeserver.exe
+wait hbdevicedialogappserver.exe
+qsfwdatabasemanagerserver.exe
+qpspathmapperserver.exe
+camenuserver.exe
+scrserver.exe
+softwaretransactionservices.exe
+stsserver.exe

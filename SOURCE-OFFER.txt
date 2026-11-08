@@ -1,0 +1,36 @@
+Orbit for Phorepoc -- licence notice and source offer
+
+The "Orbit" package contains the Hb UI framework (Orbit), its theme server and device dialogs, the Qt homescreen and its
+plug-ins, the Qt service framework / publish-and-subscribe / system info libraries, the Qt extensions, the content arsenal and
+activity framework, built for the PC image (x32). It needs the "Qt" package (Qt 4.8.7) and nothing else needs it.
+
+Orbit (Hb) was the UI of Symbian^4, the next release the Symbian Foundation planned. It was published as open source in 2010
+and never shipped on a phone. The sources are the Symbian Foundation's, copyright Nokia Corporation and/or its subsidiaries:
+  - Hb (hbcore, hbwidgets, hbinput, hbfeedback, hbutils, the theme server, the device dialog server): GNU Lesser General
+    Public License 2.1 with the Nokia Qt LGPL Exception 1.1 (LICENSES/LGPL-2.1.txt, LICENSES/Nokia-Qt-LGPL-exception-1.1.txt);
+  - the homescreen, the content arsenal, the activity framework, Qt Mobility parts, the Qt extensions, the software component
+    registry and the rest: the Eclipse Public License 1.0 (LICENSES/EPL-1.0.txt) -- each file's header names its licence.
+The licence texts are installed with the package (\resource\phe\orbit\licences\).
+
+The Hb libraries are dynamic libraries: you can replace them with your own build of Hb (same ABI) and the applications that use
+them keep working.
+
+Corresponding source, available to anyone who has this package, for at least three years after the release you installed it
+from:
+
+  1. The Symbian Foundation sources, unmodified, at the commits we build (the repositories are on
+     https://github.com/SymbianSource; the commits are pinned in the Phorepoc baseline lock):
+       oss.FCL.sf.mw.hb                    dae755d5c52b7f41d5766726a9dcc63d8dcbb75b
+       oss.FCL.sf.mw.qtextensions          6940fe99c4e22c0f2f4c91133f161af2f4df739f
+       oss.FCL.sf.mw.qtmobility            a462a7d9493bb0bfb809c09d5c331498b47a2cd6
+       oss.FCL.sf.app.homescreen           61d721e71cc55557a6ad9c5ae066f07302c87aa2
+       oss.FCL.sf.mw.homescreensrv         e60a802a17f73f2be295342a9456add8d772bd7c
+  2. Our changes to them (the board deltas in core's toolchain/shims/, the build scripts) and the compiler images:
+       https://github.com/Phorepoc/core   (os/toolchain/shims/, registry/components_s4.py)
+       https://github.com/Phorepoc/pdk, https://github.com/Phorepoc/toolchain
+     the release workflow that publishes the package is https://github.com/Phorepoc/orbit-ui.
+
+Written offer: if the links above are no longer available, send a request to the address given on the Phorepoc organisation page
+https://github.com/Phorepoc and we will send you the corresponding source on a medium of your choice for the cost of the medium.
+
+Qt is a registered trademark of The Qt Company Ltd and is used here only to name the software.
