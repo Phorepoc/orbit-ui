@@ -4,7 +4,7 @@ Orbit for Phorepoc OS: the Hb UI framework (with its theme server and device dia
 Qt service framework, content arsenal and activity framework they use. Orbit was the UI of Symbian^4, the Symbian Foundation's
 planned next release, published as open source in 2010 and never shipped on a phone.
 
-It is a shell you install through the Catalogue; no system image carries it (nor Qt, which it needs: the
+It is a shell you install through the Catalogue; no system image carries it (nor Qt, which it needs; it also needs the image's GL stack, libEGL and friends: the
 [qt-symbian](https://github.com/Phorepoc/qt-symbian) package, "Qt"). The release has one SIS, built for x32 (the PC image):
 `orbit-ui-x32.sis`, package "Orbit". ARM follows once the phone's WSERV panic in Hb's background thread is fixed.
 
