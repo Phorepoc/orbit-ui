@@ -26,7 +26,7 @@ for z in "$B"/qt48/*-zdata.txt; do
     # package of Central Repository, as the 2010 packages do (the image carries its ROM stub, CenRepStub.sis)
     case "$target" in
       private\\10202be9\\*) CENREP="$CENREP,$host=c:/private/10202be9/${target##*\\}"; continue ;;
-      private\\200267af\\*) continue ;;
+      private\\200267af\\*) continue ;;   # qmake stub of a linked DLL, never shipped upstream (older zdata lists only)
     esac
     FILES+=(--file "$host=!:/${target//\\//}")
   done < "$z"
