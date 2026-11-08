@@ -12,14 +12,16 @@ set -eu
 REPO=$(cd "$(dirname "$0")/.." && pwd)
 B="${PHOREPOC_BUILD:?}"
 KEYS=$(sed -n 's/^COMPONENTS_x32="\(.*\)"/\1/p' "$REPO/package.conf")
+SKIP=$(sed -n 's/^SKIP_DATA_x32="\(.*\)"$/\1/p' "$REPO/package.conf")
 FILES=()
 for z in "$B"/qt48/*-zdata.txt; do
   [ -f "$z" ] || continue
   while IFS= read -r line; do
     [ -n "$line" ] || continue
     target=${line%%=*}; host=${line#*=}
-    case "$target" in sys\install\*) continue ;; esac
-    FILES+=(--file "$host=!:/${target//\//}")
+    case "$target" in sys\\install\\*) continue ;; esac
+    case " $SKIP " in *" $target "*) continue ;; esac
+    FILES+=(--file "$host=!:/${target//\\//}")
   done < "$z"
 done
 for f in "$REPO"/LICENSES/* "$REPO/LICENSE" "$REPO/NOTICE" "$REPO/SOURCE-OFFER.txt"; do
