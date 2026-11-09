@@ -39,4 +39,4 @@ mkdir -p "$B/sis"
 # 0x2001E61C = the "Qt" package's identity (qt-symbian); Orbit's own is in Phorepoc's test range
 PHOREPOC_S4=1 PHOREPOC_QT48=1 python3 "$PHOREPOC_PDK/tools/make_sis.py" $KEYS --unsigned --uid 0xE7015A10 \
   --version "${PHOREPOC_PACKAGE_VERSION:-1.0.0}" --name "Orbit" --vendor Phorepoc \
-  --depends 0x2001E61C,4.8.0,Qt ${CENREP:+--embed "0x10202BE9,sp,1.0.0,Orbit settings$CENREP"} "${FILES[@]}" --out "$B/sis/orbit-ui-x32.sis"
+  --depends 0x2001E61C,4.8.0,Qt --depends 0x2002AC89,1.2.0,QtMobility ${CENREP:+--embed "0x10202BE9,sp,1.0.0,Orbit settings$CENREP"} "${FILES[@]}" --out "$B/sis/orbit-ui-x32.sis"
