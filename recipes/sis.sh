@@ -27,10 +27,20 @@ for z in "$B"/qt48/*-zdata.txt; do
     case "$target" in
       private\\10202be9\\*) CENREP="$CENREP,$host=c:/private/10202be9/${target##*\\}"; continue ;;
       private\\200267af\\*) continue ;;   # qmake stub of a linked DLL, never shipped upstream (older zdata lists only)
+      private\\2002ac7f\\*) continue ;;   # the service framework's database manager server's folder (the QtMobility package's): no pre-built database,
+                                          # Orbit's descriptors go to its import folder below
     esac
     FILES+=(--file "$host=!:/${target//\\//}")
   done < "$z"
 done
+# Orbit's own Qt Mobility service descriptors: the stock database manager server registers every *.xml of \private\2002ac7f\import\ when it
+# starts (a folder any package may write); service_descriptors.py (prebuild.sh) wrote the list "private\2002ac7f\import\<name>.xml=<host file>"
+if [ -f "$B/qt48/sfw/import.list" ]; then
+  while IFS= read -r line; do
+    [ -n "$line" ] || continue
+    FILES+=(--file "${line#*=}=!:/private/2002ac7f/import/$(basename "${line#*=}")")
+  done < "$B/qt48/sfw/import.list"
+fi
 for f in "$REPO"/LICENSES/* "$REPO/LICENSE" "$REPO/NOTICE" "$REPO/SOURCE-OFFER.txt"; do
   FILES+=(--file "$f=!:/resource/phe/orbit/licences/$(basename "$f")")
 done
