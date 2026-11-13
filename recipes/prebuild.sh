@@ -13,6 +13,8 @@ export PHOREPOC_S4=1 PHOREPOC_QT48=1 JOBS=${JOBS:-$(nproc)}
 if [ ! -f "${PHOREPOC_BUILD:?}/qt48/qt-symbian/bin/qmake" ]; then
   bash "${PHOREPOC_OS_ROOT}/tools/phorepoc-qt48/build_qt_sis.sh" fetch host configure configure_full mocables stage
 fi
+# the stock Qt Mobility 1.2 headers (<build>/qt48/qtm12-src) Orbit compiles against: the QtMobility package's own tree, configured only
+bash "${PHOREPOC_OS_ROOT}/tools/phorepoc-qt48/build_qtmobility_sis.sh" fetch configure
 bash "$S4/hb_configure_symbian.sh"
 python3 "$S4/hb_zdata.py"
 bash "$S4/qtm_configure_symbian.sh"
