@@ -11,7 +11,9 @@
 set -eu
 REPO=$(cd "$(dirname "$0")/.." && pwd)
 B="${PHOREPOC_BUILD:?}"
-KEYS=$(sed -n 's/^COMPONENTS_x32="\(.*\)"/\1/p' "$REPO/package.conf")
+# Orbit's own components: COMPONENTS_x32 without its link providers (PROVIDERS_x32, the files of the Qt and QtMobility packages)
+KEYS=$(PROVIDERS_x32=; COMPONENTS_x32=; . "$REPO/package.conf"
+       for k in $COMPONENTS_x32; do case " $PROVIDERS_x32 " in *" $k "*) ;; *) echo "$k" ;; esac; done)
 SKIP=$(sed -n 's/^SKIP_DATA_x32="\(.*\)"$/\1/p' "$REPO/package.conf")
 FILES=()
 CENREP=""
