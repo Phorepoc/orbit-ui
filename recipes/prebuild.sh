@@ -25,6 +25,7 @@ bash "$S4/build_hb_host_tools.sh"
 bash "$S4/hsrv_configure_symbian.sh"
 python3 "$S4/s4_exports.py"
 bash "$S4/hs_configure_symbian.sh"
+bash "$S4/hsw_configure_symbian.sh"
 python3 "$S4/s4_exports.py"
 # Orbit's Qt Mobility service descriptors, installed into the stock import folder (no pre-built database any more)
 python3 "$S4/service_descriptors.py"
