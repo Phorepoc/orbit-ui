@@ -23,7 +23,7 @@ Check out core, the [pdk](https://github.com/Phorepoc/pdk), qt-symbian and this 
 
 ```sh
 bash recipes/prebuild.sh                       # Qt 4.8 (if not built), Orbit's configure, the exports, host tools, the Z: data lists
-phe component build -arch x32 $(sed -n 's/^COMPONENTS_x32="\(.*\)"/\1/p' package.conf)
+phe component build -arch x32 $(. ./package.conf; echo $COMPONENTS_x32)   # Qt + Qt Mobility first: link providers only
 bash recipes/sis.sh                            # $PHOREPOC_BUILD/sis/orbit-ui-x32.sis
 ```
 
