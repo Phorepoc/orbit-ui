@@ -20,11 +20,12 @@ python3 "$S4/hb_zdata.py"
 bash "$S4/qtm_configure_symbian.sh"
 bash "$S4/qte_configure_symbian.sh"
 python3 "$S4/s4_exports.py"
+# the host tools before the homescreen trees: their generated sources need docml2bin (the layouts their .qrc files name)
+bash "$S4/build_hb_host_tools.sh"
 bash "$S4/hsrv_configure_symbian.sh"
 python3 "$S4/s4_exports.py"
 bash "$S4/hs_configure_symbian.sh"
 python3 "$S4/s4_exports.py"
-bash "$S4/build_hb_host_tools.sh"
 # Orbit's Qt Mobility service descriptors, installed into the stock import folder (no pre-built database any more)
 python3 "$S4/service_descriptors.py"
 bash "$S4/build_translations.sh"
