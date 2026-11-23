@@ -18,19 +18,19 @@ them keep working.
 Corresponding source, available to anyone who has this package, for at least three years after the release you installed it
 from:
 
-  1. The Symbian Foundation sources, unmodified, at the commits we build (the repositories are on
+  1. The Symbian Foundation sources, unmodified, at the commits Phorepoc builds (the repositories are on
      https://github.com/SymbianSource; the commits are pinned in the Phorepoc baseline lock):
        oss.FCL.sf.mw.hb                    dae755d5c52b7f41d5766726a9dcc63d8dcbb75b
        oss.FCL.sf.mw.qtextensions          6940fe99c4e22c0f2f4c91133f161af2f4df739f
        oss.FCL.sf.mw.qtmobility            a462a7d9493bb0bfb809c09d5c331498b47a2cd6
        oss.FCL.sf.app.homescreen           61d721e71cc55557a6ad9c5ae066f07302c87aa2
        oss.FCL.sf.mw.homescreensrv         e60a802a17f73f2be295342a9456add8d772bd7c
-  2. Our changes to them (the board deltas in core's toolchain/shims/, the build scripts) and the compiler images:
+  2. Phorepoc's changes to them (the board deltas in core's toolchain/shims/, the build scripts) and the compiler images:
        https://github.com/Phorepoc/core   (os/toolchain/shims/, registry/components_s4.py)
        https://github.com/Phorepoc/pdk, https://github.com/Phorepoc/toolchain
      the release workflow that publishes the package is https://github.com/Phorepoc/orbit-ui.
 
 Written offer: if the links above are no longer available, send a request to the address given on the Phorepoc organisation page
-https://github.com/Phorepoc and we will send you the corresponding source on a medium of your choice for the cost of the medium.
+https://github.com/Phorepoc and Phorepoc will send you the corresponding source on a medium of your choice for the cost of the medium.
 
 Qt is a registered trademark of The Qt Company Ltd and is used here only to name the software.
