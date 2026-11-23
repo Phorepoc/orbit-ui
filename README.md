@@ -31,7 +31,5 @@ bash recipes/sis.sh                            # $PHOREPOC_BUILD/sis/orbit-ui-x3
 
 ## License
 
-Our files are BSD-2-Clause. Hb is LGPL-2.1 with the Nokia Qt LGPL Exception 1.1; the other Symbian Foundation parts are under the
-Eclipse Public License 1.0. `NOTICE` and `SOURCE-OFFER.txt` have the details.
-
-Contributions are welcome under the same terms. Add your name to `AUTHORS` in your first pull request.
+This repository is under the licence of the Symbian Foundation's Orbit and Hb sources: LGPL-2.1-only with the Nokia Qt LGPL Exception 1.1 (`LICENSE`), as port work on Hb. The other Symbian Foundation parts are under the Eclipse Public License 1.0. `NOTICE` and `SOURCE-OFFER.txt` have the details.
+Files adapted from other projects keep their authors' copyright (see `AUTHORS` and `NOTICE`). Contributions are under the same terms. Add your name to `AUTHORS` in your first pull request.

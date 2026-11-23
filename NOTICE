@@ -3,7 +3,7 @@ Copyright The Phorepoc Authors (see AUTHORS)
 
 Phorepoc was founded by Kyriakos Bompotis.
 
-Our files (recipes, package.conf, the shell description, workflows) are licensed under the BSD 2-Clause License (LICENSE).
+This repository (recipes, package.conf, the shell description, workflows) is under the licence of the Hb sources it ports: GNU Lesser General Public License 2.1 with the Nokia Qt LGPL Exception 1.1 (LICENSE).
 
 The Symbian Foundation's sources are not copied here, nor in core: the build fetches them at the commits pinned in the Phorepoc
 baseline lock. They are copyright Nokia Corporation and/or its subsidiaries and licensed as SOURCE-OFFER.txt lists: Hb under

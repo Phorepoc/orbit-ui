@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Copyright The Phorepoc Authors
-# SPDX-License-Identifier: BSD-2-Clause
+# SPDX-License-Identifier: LGPL-2.1-only WITH Nokia-Qt-LGPL-exception-1.1
 #
 # prebuild.sh -- the pdk's package.yml runs it in the toolchain container before the components: core's S^4 recipes
 # (os/tools/phorepoc-s4/: Orbit's configure, Qt Mobility / Qt extensions / homescreensrv / homescreen configure, the header

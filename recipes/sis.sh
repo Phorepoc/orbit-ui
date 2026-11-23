@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Copyright The Phorepoc Authors
-# SPDX-License-Identifier: BSD-2-Clause
+# SPDX-License-Identifier: LGPL-2.1-only WITH Nokia-Qt-LGPL-exception-1.1
 #
 # sis.sh -- the pdk's package.yml runs it after the components: $PHOREPOC_BUILD/sis/orbit-ui-x32.sis, package "Orbit".
 # It carries the S^4 set's images and data (the Z: data lists the S^4 build writes, $PHOREPOC_BUILD/qt48/*-zdata.txt), the shell
